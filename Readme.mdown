@@ -38,3 +38,13 @@ Example:
 			
 		}]; 
 		[[NSOperationQueue mainQueue] addOperation:infoReq];
+
+TODO:
+	- Block the FBRequestOperation from completion until the provided completion block is also finished
+		- currently any dependent operations may begin exexuting in parallel with your completion block
+		- this makes it difficult to pass resulting data from one operation to the next
+	- Create the FBRequest earlier
+		- currently the request is created only when the FBRequestOperation begins
+		- this makes it difficult to inspect or modify the parameters of the request
+
+		
